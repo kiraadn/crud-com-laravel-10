@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <a href="{{ route('users.create')}}">Cadastrar</a>
+    <hr>
     <h2>Usuarios</h2>
 
     <ul>

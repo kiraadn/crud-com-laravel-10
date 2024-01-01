@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user_create');
     }
 
     /**
@@ -37,7 +37,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->user->create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => password_hash($request->input('password'), PASSWORD_DEFAULT),
+        ]);
+
+         if($created){
+            return redirect()->back()->with('message', 'Sucessfully created');
+         }
+
+         return redirect()->back()->with('message', 'Error created');
     }
 
     /**
