@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']) -> name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/users', [UserController::class, 'index']) -> name('users.index');
 Route::get('/users/create', [UserController::class, 'create']) -> name('users.create');  //Para quando se cria uma view com form para cadastrar os users
 Route::post('/users', [UserController::class, 'store']) -> name('users.store');  //Para armazenar os dados, que vieram da view (armazena o que vem do create)
