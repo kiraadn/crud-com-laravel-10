@@ -4,6 +4,10 @@
 
     <h2>Editar Usuario</h2>
 
+    @if (session()->has('message'))
+        {{ session()->get('message')}}
+    @endif
+
     <form action="{{ route('users.update', ['user'=>$user->id])}}" method="post">
         @csrf
         <input type="hidden" name="_method" value="PUT"> {{-- Campo Culto para trabalhar com requisicoes do Tipo PUT --}}
