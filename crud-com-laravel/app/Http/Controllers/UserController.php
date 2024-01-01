@@ -51,9 +51,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        //Vai redirecionar a pagina para editar os dados, dados que proveem da BD
+        return view('user_edit', ['user'=>$user]);
     }
 
     /**
@@ -61,7 +62,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        var_dump($id);
     }
 
     /**
