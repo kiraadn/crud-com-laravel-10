@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::delete('/users/{user}', [UserController::class, 'destroy']) -> name('users.destroy');  //Para remover os dados
 
 Route::resource('users', UserController::class);
+
+Route::get('/employees', [EmployeeController::class, 'index']) -> name('employees.index');
+Route::get('/employees/create', [EmployeeController::class, 'create']) -> name('employees.create');  //Para quando se cria uma view com form para cadastrar os users
+Route::post('/employees', [EmployeeController::class, 'store']) -> name('employees.store');  //Para armazenar os dados, que vieram da view (armazena o que vem do create)
+Route::get('/employees/{employee}', [EmployeeController::class, 'show']) -> name('employees.show');  //Para mostrar os dados, que vieram da BD (armazenados  com o store)
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit']) -> name('employees.edit');  //Para mostrar formulario para fazer o update
+Route::put('/employees/{employee}', [EmployeeController::class, 'update']) -> name('employees.update');  //Para fazer o update em si.
+Route::delete('/employees/{employee}', [EmployeeController::class, 'destroy']) -> name('employees.destroy');  //Para remover os dados
