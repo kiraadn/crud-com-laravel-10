@@ -1,5 +1,5 @@
 
-/*@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css');*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css');
 /* ==========================================================================
   Custom Properties
 ========================================================================== */
@@ -10,28 +10,28 @@
     --primary-color-dark: #f1f1f1;
     --text-dark: #000000;
     --text-light: #FFF;
-  
+
     --font-sans: "Century Gothic", Tahoma, Arial, sans-serif;
     --font-serif: Georgia, Times, "Times New Roman", serif;
     --font-family: 'Fira sans', sans-serif;
   }
-  
+
   /* ==========================================================================
     Sensible defaults
   ========================================================================== */
-  
+
   *,
   *:before,
   *:after {
     box-sizing: border-box;
-    
+
   }
-  
+
   ::selection {
     background-color: var(--primary-color);
     color: var(--text-light);
   }
-  
+
   html,
   body {
     background:var(--body-color);
@@ -42,19 +42,19 @@
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     margin: 0;
-    
+
   }
-  
+
   img,
   picture {
     max-width: 100%;
     display: block;
   }
-  
+
   /* ==========================================================================
     Typography
   ========================================================================== */
-  
+
   h1,
   h2,
   h3,
@@ -64,80 +64,80 @@
     margin: 0;
     font-family: var(--font-family);
   }
-  
+
   /* h1 {
     font-size: 3.75rem;
     line-height: 1;
     margin: 1rem 0 1.5rem;
     color: var(--primary-color);
   }*/
-  
+
   h1 {
     margin-top: 0.5em;
     display: block;
     font-size: 2em;
     font-weight: bold;
   }
-  
+
   h2 {
     font-size: 3rem;
     line-height: 1;
     margin: 1rem 0 1rem;
   }
-  
+
   h3 {
     font-size: 2.25rem;
     line-height: 2.5rem;
     margin: 1rem 0 1rem;
   }
-  
+
   h4 {
     font-size: 1.875rem;
     line-height: 2.25rem;
     margin: 1rem 0 1rem;
   }
-  
+
   h5 {
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 1rem 0 0.5rem;
   }
-  
+
   h6 {
     font-size: 1.25rem;
     line-height: 1.75rem;
     margin: 1rem 0 0.2rem;
   }
-  
+
   p {
         color: #6a727a;
         font-weight: 500;
   }
-  
+
   a {
     color: #6a727a;
   }
-  
+
   a:hover {
     color: #6a727a;
   }
-  
+
   hr {
     border: 0;
     height: 1px;
     background-color: #e0e0e0;
     margin: 1em 0;
   }
-  
+
   /* ==========================================================================
     Forms
   ========================================================================== */
-  
+
   form {
     font-family: var(--font-family);
     width: 100%;
   }
-  
+
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -150,7 +150,7 @@
     border: 3px var(--primary-color-dark) solid;
     margin-bottom: 10px;
   }
-  
+
   input[type="text"]:focus,
   textarea:focus,
   input[type="email"]:focus,
@@ -159,7 +159,7 @@
     border: 2px var(--text-dark) solid;
     outline: 0;
   }
-  
+
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -170,14 +170,14 @@
   select {
     border-radius: 0.25em;
   }
-  
-  
-  
+
+
+
   label {
     margin-bottom: 10px;
     display: block;
   }
-  
+
   /* button,
   input[type="submit"],
   input[type="reset"] {
@@ -194,7 +194,7 @@
     cursor: pointer;
     transition: 0.3s ease-in-out;
   }*/
-  
+
   button,
   input[type="submit"],
   input[type="reset"] {
@@ -207,19 +207,19 @@
     cursor: pointer;
     font-family: var(--font-family);
   }
-  
+
   button:not(:last-child),
   input[type="submit"]:not(:last-child),
   input[type="reset"]:not(:last-child) {
     margin-right: 0em;
   }
-  
+
   button:hover,
   input[type="submit"]:hover,
   input[type="reset"]:hover {
     background-color: var(--primary-color-dark);
   }
-  
+
   .btn-link{
     margin-top: 1em;
     border: 1px solid #e0e0e0;
@@ -234,32 +234,32 @@
   .btn-link:hover{
     background-color: var(--primary-color-dark);
   }
-  
+
   input[type="checkbox"],
   input[type="radio"] {
     margin-top: 1.4em;
     width: 1.4em;
     height: 1.4em;
   }
-  
+
   /* ==========================================================================
     Lists
   ========================================================================== */
-  
+
   ul {
     margin: 2em 0;
     list-style-type: circle;
   }
-  
+
   li {
     line-height: 1.8em;
     font-family: var(--font-sans);
   }
-  
+
   /* ==========================================================================
     Tables
   ========================================================================== */
-  
+
   table {
     border-collapse: collapse;
     width: 100%;
@@ -267,7 +267,7 @@
     color: #6a727a;
     margin-top: 20px;
   }
-  
+
   th {
    /* background-color: var(--primary-color);
     color: var(--text-dark);*/
@@ -275,7 +275,7 @@
     font-size: 14px;
     font-weight: 500;
   }
-  
+
   th,
   td {
     border:0px var(--primary-color-dark) solid;
@@ -284,23 +284,23 @@
   td:hover {
     cursor: pointer;
   }
-  
+
   tr:hover,
   tr:nth-child(odd):hover {
     background-color: #fdfdea;
   }
-  
+
   tr:nth-child(odd) {
     background-color: #f3f3f3;
   }
-  
+
   /* ==========================================================================
     Layout Elements
   ========================================================================== */
   section {
     margin: 4rem 0;
   }
-  
+
   footer {
     margin-top: 2em;
     justify-self: flex-end;
@@ -312,7 +312,7 @@
     color: var(--text-light);
     padding: 2em;
   }
-  
+
   /* ==========================================================================
     Custom/Alternative Styles
   ========================================================================== */
@@ -330,13 +330,13 @@
     margin-bottom: 20px;
   }
   .table{
-    background: #FFF; 
+    background: #FFF;
   }
   .table-filter{
     border-bottom: 1px solid #e0e0e0;
     padding: 0px;
     margin:0px;
-    font-family: var(--font-family);       
+    font-family: var(--font-family);
   }
   .table-filter div{
     padding: 0 30px;
@@ -362,7 +362,7 @@
     margin-top: 10px;
     display: grid;
     grid-template-columns: minmax(150px, auto) minmax(180px, 1fr);
-                
+
   }
   .search-select {
     appearance: none;
@@ -383,7 +383,7 @@
     opacity: 0.7;
     top: 8px;
     right: 20px;
-    position: absolute;                        
+    position: absolute;
   }
   .relative{
     position: relative;
@@ -393,9 +393,9 @@
     left: 12px;
     color: #d4d4d4;
     position: absolute;
-                    
+
   }
-  
+
   .search-input{
     width: 100%;
     border: none;
@@ -412,8 +412,8 @@
     font-family: var(--font-family);
     font-size: 1rem;
   }
-  
-    
+
+
   .btn {
     border: 1px solid #e0e0e0;
     background: none;
@@ -422,16 +422,16 @@
     cursor: pointer;
     font-family: var(--font-family);
   }
-  
+
   .btn-success:hover {
   background: rgb(47, 214, 111);
-  color: white;  
+  color: white;
   }
   .btn-danger:hover {
     background: crimson;
-    color: white; 
+    color: white;
   }
-  
+
   .table-paginate{
     width: 230px;
     margin-left: auto;
@@ -441,14 +441,14 @@
     justify-content: space-between;
     display: flex;
   }
-  
+
   .pagination {
     margin-bottom: 1rem;
     margin-right: 1rem;
     justify-content: space-between;
     color: #6a727a;
   }
-  
+
   .pagination a {
     color: black;
     float: left;
@@ -456,19 +456,19 @@
     padding: 8px 16px;
     text-decoration: none;
   }
-  
+
   .active-page:hover {
     background: #e0e0e0;
-    color: #6a727a; 
+    color: #6a727a;
   }
-  
+
   .paginate-icon {
     cursor: pointer;
-    opacity: 0.7; 
+    opacity: 0.7;
     font-family: "Font Awesome 5 Free";
     color: #6a727a;
   }
-  
+
   .card{
     display: grid;
     grid-template-columns: 1fr minmax(auto, 290px);
@@ -476,7 +476,7 @@
     color: #6a727a;
     font-family: var(--font-family);
   }
-  
+
   .card div {
   background: white;
   border: 1px solid #e0e0e0;
@@ -484,19 +484,19 @@
   border-radius: 4px;
   padding: 20px;
   }
-  
+
   .alt {
     background-color: transparent;
     border: 2px var(--primary-color) solid;
     color: var(--primary-color);
   }
-  
+
   .alt:hover {
     background-color: transparent;
     border: 2px var(--primary-color-dark) solid;
     color: var(--primary-color-dark);
   }
-  
+
   /* ==========================================================================
     Product custom styles
   ========================================================================== */
@@ -522,17 +522,17 @@
     grid-template-columns: 50px 1fr 120px 120px 120px;
     font-family: var(--font-family);
   }
-  
+
   .img-product {
-    width: 100px; 
+    width: 100px;
     height: 80px;
   }
-  
-  
+
+
   /* ==========================================================================
     Media queries
   ========================================================================== */
-  
+
   @media screen and (max-width: 550px) {
     button,
     input[type="submit"],
@@ -540,4 +540,4 @@
       width: 100%;
     }
   }
-  
+
