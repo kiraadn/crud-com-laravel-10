@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
+Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashboard');
