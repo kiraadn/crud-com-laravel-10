@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Kalam&family=Pacifico&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Pacifico&family=Pangolin&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Tilt+Neon&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css');
+
+*, body {
+    font-family: 'Abel', sans-serif;
+}
+
+body{
+    background-color: #ebe3e3 !important;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.nav-logo{
+    width: 50px;
+}
+
+.nav-links li {
+    margin-inline: 10px;
+}
+.nav-links li a {
+    color: white ;
+    font-family: 'Abel', sans-serif !important;
+}
+
+header .active a{
+    background: orange;
+    padding-inline: 25px !important;
+    border-radius: 15px;
+    color: black !important;
+    font-weight: 600;
+}
+
+header a:hover{
+    color: orange !important;
+    border-bottom: 2px orange solid;
+    font-weight: 600;
+}
+
+form label{
+    font-weight: 600;
+}
+
+
+.form-control, .form-select{
+    box-shadow: 0 0 0 .15rem rgb(130, 194, 237) !important;
+    font-family: 'Ubuntu', sans-serif ;
+    font-weight: 600;
+}
+
+.text-form-in{
+    font-family: cursive,'Kalam', poppins, sans-serif !important;
+}
+
+.form-control{
+    box-shadow: 0 0 0 .15rem rgb(130, 194, 237) !important;
+}
+
+.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .15rem rgb(130, 194, 237) !important;
+
+}
+
+.logo-form {
+    max-height: 46px;
+}
+
+
+/* titulo superior */
+.form-header a,
+.titulo-form-header a {
+    font-family: 'Ubuntu', sans-serif ;
+    /* color: #000 !important; */
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #e4bd37;
+    font-weight: 600;
+}
+
+.img-product {
+    width: 100px;
+    height: 80px;
+  }
+
+
+
+ form .btn-success:hover {
+    background: rgb(47, 214, 111) !important;
+    color: white !important;
+    }
+
+ form a.btn-success i.fa-pencil-alt:hover  {
+    color: white !important;
+ }
+  form .btn-danger:hover {
+      background: crimson;
+      color: white;
+    }
+
+
+    .nameView{
+        font-size: 1.9rem;
+        color: #353e48;
+        font-weight: 600;
+    }
+/* Footers */
+footer{
+    text-align: center;
+    background-color: #353e48;
+    color: #fff;
+    padding: 30px;
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+}
+
+/*Fonte weight*/
+.fw-1{
+    font-weight: 600;
+}
+.fw-2{
+    font-weight: 700;
+}
+.fw-3{
+    font-weight: 800;
+}
+.fw-4{
+    font-weight: 900;
+}

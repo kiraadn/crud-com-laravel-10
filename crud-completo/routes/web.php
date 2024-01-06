@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransportadorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 
 
  Route::resource('/products', ProductController::class);
+
+ Route::resource('/transportadors', TransportadorController::class);
