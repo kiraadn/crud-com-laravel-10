@@ -91,6 +91,11 @@ form label{
     height: 80px;
   }
 
+  .resultadoSearch{
+    padding-top: .5rem;
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
 
 
  form .btn-success:hover {
@@ -107,11 +112,13 @@ form label{
     }
 
 
-    .nameView{
+    .nameView {
         font-size: 1.9rem;
         color: #353e48;
         font-weight: 600;
     }
+
+
 /* Footers */
 footer{
     text-align: center;

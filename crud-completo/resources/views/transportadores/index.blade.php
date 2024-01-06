@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-0">
-        <h1>Transportadores</h1>
+
+        @if ($search)
+            <h2>Pesquisando por: {{ $search }} ...</h2>
+        @else
+            <h1>Transportadores registados - <span class="nameView">{{count($transportadores)}}</span></h1>
+        @endif
         <a class="btn btn-primary btn-md" href="{{ route('transportadors.create') }}">Cadastrar</a>
     </div>
     <hr style="margin-top: 0px;">
@@ -45,45 +50,56 @@
                 </tr>
             </thead>
             <tbody>
+                @if (count($transportadores) > 0)
+                    @foreach ($transportadores as $key => $transportador)
+                        <tr class="">
+                            <td scope="row">{{ ++$key }}</td>
+                            <td>{{ $transportador->nomeCompleto }}</td>
+                            <td>{{ $transportador->celular }}</td>
+                            <td>{{ $transportador->email }}</td>
+                            <td>{{ $transportador->areaActuacao }}</td>
+                            <td>{{ $transportador->tipoEmpresa }}</td>
+                            <td>
+                                <img width="45px" src="{{ asset('images/bi/frontal/' . $transportador->biFrontal) }}">
+                            </td>
+                            <td>
+                                <img width="45px"
+                                    src="{{ asset('images/bi/traseiras/' . $transportador->biTraseira) }}" />
+                            </td>
+                            <td style="d-flex">
+                                <img width="45px" src="{{ asset('images/cartas/' . $transportador->cartaConducao) }}" />
+                            </td>
+                            <td>
+                                <div class="d-flex ">
+                                    <a href="{{ route('transportadors.edit', $transportador->id) }}"
+                                        class="btn-link btn btn-success mx-1"
+                                        style="padding-top: 4px; padding-bottom: 4px;">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <form action="{{ route('transportadors.destroy', $transportador->id) }}"
+                                        method="post">
+                                        @csrf
+                                        @method('DELETE')
 
-                @foreach ($transportadores as $key=>$transportador)
-                    <tr class="">
-                        <td scope="row">{{++$key}}</td>
-                        <td>{{$transportador->nomeCompleto}}</td>
-                        <td>{{$transportador->celular}}</td>
-                        <td>{{$transportador->email}}</td>
-                        <td>{{$transportador->areaActuacao}}</td>
-                        <td>{{$transportador->areaActuacao}}</td>
-                        <td>
-                            <img width="45px" src="{{ asset('images/bi/frontal/' . $transportador->biFrontal)}}">
-                        </td>
-                        <td >
-                            <img width="45px" src="{{ asset('images/bi/traseiras/' . $transportador->biTraseira) }}" />
-                        </td>
-                        <td style="d-flex">
-                            <img width="45px" src="{{ asset('images/cartas/' . $transportador->cartaConducao) }}" />
-                        </td>
-                        <td>
-                            <div class="d-flex ">
-                                <a href="{{ route('transportadors.edit', $transportador->id) }}" class="btn-link btn btn-success mx-1" style="padding-top: 4px; padding-bottom: 4px;">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>
-                                <form action="{{ route('transportadors.destroy', $transportador->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button class="btn btn-danger" onclick="deleteConfirm(event)">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-
-
+                                        <button class="btn btn-danger" onclick="deleteConfirm(event)">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
         </table>
+        @if (count($transportadores) == 0 && $search)
+            <p class="resultadoSearch">Não foi possível encontrar algum transportador com {{ $search }}! <a
+                    href="{{ route('transportadors.index') }}">Ver
+                    todos</a>
+            </p>
+        @elseif (count($transportadores) == 0)
+            <p class="resultadoSearch">Não há Transportadores disponiveis.</p>
+        @endif
     </div>
 
     <script>

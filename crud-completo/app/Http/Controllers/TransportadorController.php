@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 class TransportadorController extends Controller
 {
 
-    public function index()
-    {
-        $transportadores = Transportador::all();
+    public function index() {
+        $keyword = request('search');
+        // $keyword = $request->get('search');
+        $perPage = 5;
 
-        return view('transportadores.index', ['transportadores' => $transportadores]);
+        if(!empty($keyword)){
+            $transportadores = Transportador::where('nomeCompleto', 'LIKE', "%$keyword%")
+                        ->orWhere('celular', 'LIKE', "%$keyword%")
+                        ->orWhere('email', 'LIKE', "%$keyword%")
+                        ->latest()->paginate($perPage);
+        } else {
+            $transportadores = Transportador::latest()->paginate($perPage);
+        }
+
+        return view('transportadores.index', ['transportadores' => $transportadores, 'search' => $keyword])->with('i',(request()->input('page', 1) -1) *5);
     }
 
     public function create()

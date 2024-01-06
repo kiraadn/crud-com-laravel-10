@@ -42,10 +42,11 @@
                         <a class="nav-link" href="{{ route('transportadors.index')}}">Listar</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 d-flex ">
-                    <input class="form-control mr-sm-2 mx-2" type="text" placeholder="Search">
+                <form class="form-inline my-2 my-lg-0 d-flex " action="{{ route('transportadors.index') }}" method="GET">
+                    <input class="form-control mr-sm-2 mx-2" type="text" name="search" id="search" placeholder="Procure">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
+
             </div>
         </nav>
     </header>
