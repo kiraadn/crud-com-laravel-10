@@ -32,6 +32,9 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style.css') }}"rel="stylesheet">
 
+    <!-- Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>

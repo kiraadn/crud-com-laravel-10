@@ -18,4 +18,16 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/forgot', [AuthController::class, 'forgot'])->name('auth.forgot');
-Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.dashboard');
+Route::post('/login_post', [AuthController::class, 'login_post'])->name('auth.login_post');
+Route::post('/forgot_post', [AuthController::class, 'forgot_post'])->name('auth.forgot_post');
+
+Route::get('/reset/{token}', [AuthController::class, 'getReset'])->name('auth.reset');
+Route::post('/reset/{token}', [AuthController::class, 'postReset'])->name('auth.reset_post');
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboards.dashboard');
+});
+
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+

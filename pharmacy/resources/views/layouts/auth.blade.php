@@ -29,6 +29,8 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('css/style.css')}}" rel="stylesheet">
 
+  <!-- Styles -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -44,7 +46,7 @@
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                   <img src="{{ asset('img/logo.png')}}" alt="">
-                  <span class="d-none d-lg-block">GesFarm M.S</span>
+                  <span class="d-none d-lg-block">GesPharm S.</span>
                 </a>
               </div><!-- End Logo -->
 

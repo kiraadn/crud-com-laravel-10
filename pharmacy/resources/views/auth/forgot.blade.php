@@ -6,17 +6,22 @@
     <div class="card-body">
 
         <div class="pt-4 pb-1">
+
+            @include('_message')
+
             <h5 class="card-title text-center pb-0 fs-4">Recuperar Minha Senha</h5>
             <p class="text-center small">Insira seu email para login</p>
         </div>
 
-        <form class="row g-3 needs-validation" novalidate>
+        <form  method="POST" action="{{ route('auth.forgot_post') }}" class="row g-3 needs-validation" novalidate>
+
+            {{ csrf_field() }}
 
             <div class="col-12">
-                <label for="yourEmail" class="form-label">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="email" name="email" class="form-control" id="yourEmail" required>
+                    <input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}" required>
                     <div class="invalid-feedback">Por favor, insira seu email.</div>
                 </div>
             </div>

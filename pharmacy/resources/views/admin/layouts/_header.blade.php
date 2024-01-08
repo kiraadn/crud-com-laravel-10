@@ -4,7 +4,7 @@
       <div class="d-flex align-items-center justify-content-between">
           <a href="index.html" class="logo d-flex align-items-center">
               <img src="{{ asset('img/logo.png') }}" alt="">
-              <span class="d-none d-lg-block">NiceAdmin</span>
+              <span class="d-none d-lg-block">Gespharm S.</span>
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
@@ -224,7 +224,7 @@
                       </li>
 
                       <li>
-                          <a class="dropdown-item d-flex align-items-center" href="#">
+                          <a class="dropdown-item d-flex align-items-center" href="{{ route('auth.logout')}}">
                               <i class="bi bi-box-arrow-right"></i>
                               <span>Sign Out</span>
                           </a>
