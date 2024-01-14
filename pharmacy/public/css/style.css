@@ -1231,3 +1231,10 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+
+table thead {
+        color: #4154f1 !important;
+        text-decoration: none;
+
+}

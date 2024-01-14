@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -26,8 +27,19 @@ Route::post('/reset/{token}', [AuthController::class, 'postReset'])->name('auth.
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboards.dashboard');
+    Route::get('/admin/customers', [CustomerController::class, 'customers'])->name('customers.customers');
+    Route::get('/admin/customers/add', [CustomerController::class, 'create'])->name('customers.create');
+    Route::post('/admin/customers/store', [CustomerController::class, 'store'])->name('customers.store');
+    Route::get('/admin/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
+    Route::put('/customers/{customer}', [CustomerController::class, 'update'])-> name('customers.update');
+    Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']) -> name('customers.destroy');  //Para remover os dados
+
+
+
 });
 
-
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+
+
 

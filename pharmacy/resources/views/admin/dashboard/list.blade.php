@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Dashboard - Pharmacy M.S')
+@section('title', 'Dashboard - GesPharm S.')
 @section('content')
     <div class="pagetitle">
         <h1>Dashboard</h1>

@@ -77,6 +77,8 @@ class ProductController extends Controller
 
         $product = Product::find($request->hidden_id);
 
+
+
             $product->name = $request->name;
             $product->description = $request->description;
             //Guardando o caminho da imagem
