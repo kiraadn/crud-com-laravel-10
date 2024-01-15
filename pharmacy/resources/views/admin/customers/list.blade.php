@@ -7,8 +7,8 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item ">Dashboard</li>
-                <li class="breadcrumb-item "><a class="active" href="{{ route('customers.customers') }}">Customer list</a>
+                <li class="breadcrumb-item">Dashboard</li>
+                <li class="breadcrumb-item"><a class="active" href="{{ route('customers.customers') }}">Customer list</a>
                 </li>
             </ol>
         </nav>
@@ -25,10 +25,8 @@
                             <a href="{{ route('customers.create') }}" class="btn btn-primary"> Cadastrar Novo
                                 Cliente</a>
                         </div>
-                        <div class="table-responsive mt-4">
-                            <table class="table datatable table-striped table-hover  align-middle">
+                            <table class="table table-striped table-hover align-middle datatable">
                                 <thead>
-
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nome</th>
@@ -39,41 +37,40 @@
                                         <th scope="col">Created At</th>
                                         <th scope="col">Acções</th>
                                     </tr>
-
                                 </thead>
 
                                 <tbody class="table-group-divider">
-                                    @foreach ($customers as $key => $customer)
+                                    @foreach ($customers as $key=>$customer)
                                         <tr>
-                                            <th scope="row">{{ ++$key }}</th>
-                                            <td scope="row">{{ $customer->nomeCompleto }}</td>
-                                            <td scope="row">{{ $customer->telefone }}</td>
-                                            <td scope="row">{{ $customer->endereco }}</td>
-                                            <td scope="row">{{ $customer->nomeMedico }}</td>
-                                            <td scope="row">{{ $customer->enderecoMedico }}</td>
-                                            <td scope="row">{{ date('d-m-y H:i:s', strtotime($customer->created_at)) }}
-                                            </td>
-                                            <td scope="row" class="">
-                                                <a href="{{ route('customers.edit', ['customer' => $customer->id]) }}"
-                                                    class="btn btn-success">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </a>
-                                                <form action="{{ route('customers.destroy', $customer->id) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <a type="submit" class="btn btn-danger" onclick="deleteConfirm(event)">
-                                                        <i class="bi bi-trash"></i>
+                                            <td scope="row">{{ ++$key }}</td>
+                                            <td class="text-danger">{{ $customer->nomeCompleto }}</td>
+                                            <td>{{ $customer->telefone }}</td>
+                                            <td>{{ $customer->endereco }}</td>
+                                            <td>{{ $customer->nomeMedico }}</td>
+                                            <td>{{ $customer->enderecoMedico }}</td>
+                                            <td><div style="font-size: 14px;">{{ date('d-m-y H:i:s', strtotime($customer->created_at)) }}</div></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a href="{{ route('customers.edit', ['customer' => $customer->id]) }}"
+                                                        class="btn btn-success  mx-1">
+                                                        <i class="bi bi-pencil-square"></i>
                                                     </a>
-                                                </form>
+                                                    <form action="{{ route('customers.destroy', [$customer->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger"
+                                                            onclick="deleteConfirm(event)">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
-
                                 </tbody>
-
                             </table>
-                        </div>
 
                     </div>
                 </div>
@@ -99,7 +96,6 @@
                     form.submit();
                 }
             });
-        }
+        };
     </script>
-
 @endsection

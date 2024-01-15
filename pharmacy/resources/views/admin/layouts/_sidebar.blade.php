@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link @if(Request::segment(2) == 'dashboard') @else collapsed @endif" href="{{ route('dashboards.dashboard')}}">
+            <a class="nav-link @if(Request::segment(2) == 'dashboard') @else collapsed @endif" href="{{ route('dashboards.dashboard') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -12,7 +12,7 @@
         <!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link @if(Request::segment(2) == 'customers') @else collapsed @endif"  href="{{ route('customers.customers')}}">
+            <a class="nav-link @if(Request::segment(2) == 'customers') @else collapsed @endif"  href="{{ route('customers.customers') }}">
                 <i class="bi bi-person"></i>
                 <span>Customers</span>
             </a>

@@ -2,12 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+
+    {{-- <meta content="" name="description">
+    <meta content="" name="keywords"> --}}
 
     <!-- Favicons -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
@@ -15,22 +16,20 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/simple-datatables/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/quill/quill.snow.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/quill/quill.bubble.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/remixicon/remixicon.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/simple-datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/simple-datatables/style.css') }}">
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Styles -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -41,7 +40,7 @@
 
     @include('admin.layouts._sidebar')
 
-    <main id="main" class="main" style="min-height: 100vh">
+    <main id="main" class="main" style="min-height: 100vh;">
 
         @yield('content')
 
@@ -51,7 +50,7 @@
     @include('admin.layouts._footer')
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('vendor/apexcharts/apexcharts.min..js') }}"></script>
+    <script src="{{ asset('vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/chart.js/chart.umd.js') }}"></script>
     <script src="{{ asset('vendor/echarts/echarts.min.js') }}"></script>
