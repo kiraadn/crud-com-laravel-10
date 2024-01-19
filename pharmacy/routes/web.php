@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MedicamentosController;
+use App\Http\Controllers\MedicosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +34,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
     Route::put('/customers/{customer}', [CustomerController::class, 'update'])-> name('customers.update');
     Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']) -> name('customers.destroy');  //Para remover os dados
+
+    Route::resource('/medicos', MedicosController::class);
+    Route::get('/admin/medicos', [MedicosController::class, 'medicos'])->name('medicos.medicos');
+
+    Route::resource('/medicamentos', MedicamentosController::class);
+    Route::get('/admin/medicamentos', [MedicamentosController::class, 'medicamentos'])->name('medicamentos.medicamentos');
 
 
 

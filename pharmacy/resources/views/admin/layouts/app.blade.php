@@ -49,7 +49,10 @@
 
     @include('admin.layouts._footer')
 
-    <!-- Vendor JS Files -->
+      <!-- Template Main JS File -->
+    <script src="{{ asset('js/main.js') }}"></script>
+
+<!-- Vendor JS Files -->
     <script src="{{ asset('vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/chart.js/chart.umd.js') }}"></script>
@@ -59,8 +62,6 @@
     <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 

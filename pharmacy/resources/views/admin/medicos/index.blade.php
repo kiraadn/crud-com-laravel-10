@@ -1,18 +1,19 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Customers - GesPharm S.')
+@section('title', 'Medicines - GesPharm S.')
 @section('content')
     <div class="pagetitle">
-        <h1>Lista de Clientes</h1>
+        <h1>Lista de Médicos</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item">Dashboard</li>
-                <li class="breadcrumb-item"><a class="active" href="{{ route('customers.customers') }}">Customer list</a>
+                <li class="breadcrumb-item"><a class="active" href="{{ route('medicos.medicos') }}">Medicines list</a>
                 </li>
             </ol>
         </nav>
     </div>
+
     {{-- End Page Title --}}
     {{-- Main --}}
     <section class="section">
@@ -22,8 +23,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <a href="{{ route('customers.create') }}" class="btn btn-primary"> Cadastrar Novo
-                                Cliente</a>
+                            <a href="{{ route('medicos.create') }}" class="btn btn-primary"> Cadastrar Novo
+                                Medico</a>
                         </div>
                             <table class="table table-striped table-hover align-middle datatable">
                                 <thead>
@@ -40,22 +41,21 @@
                                 </thead>
 
                                 <tbody class="table-group-divider" style="font-size: .95rem">
-                                    @foreach ($customers as $key=>$customer)
                                         <tr>
-                                            <td scope="row">{{ ++$key }}</td>
-                                            <td class="text-danger">{{ $customer->nomeCompleto }}</td>
-                                            <td>{{ $customer->telefone }}</td>
-                                            <td>{{ $customer->endereco }}</td>
-                                            <td>{{ $customer->nomeMedico }}</td>
-                                            <td>{{ $customer->enderecoMedico }}</td>
-                                            <td><div style="font-size: 14px;">{{ date('d-m-y H:i:s', strtotime($customer->created_at)) }}</div></td>
+                                            <td scope="row">a</td>
+                                            <td class="text-danger">a</td>
+                                            <td>aaa</td>
+                                            <td>a</td>
+                                            <td>aaa</td>
+                                            <td>aa</td>
+                                            <td>aaaaa</td>
                                             <td class="d-flex">
 
-                                                    <a href="{{ route('customers.edit', ['customer' => $customer->id]) }}"
+                                                    <a href="#"
                                                         class="btn btn-success  mx-1">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </a>
-                                                    <form action="{{ route('customers.destroy', [$customer->id]) }}"
+                                                    <form action="#"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -68,7 +68,6 @@
 
                                             </td>
                                         </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
 
@@ -98,4 +97,9 @@
             });
         };
     </script>
+
+
+
+
+
 @endsection

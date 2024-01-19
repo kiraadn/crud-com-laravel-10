@@ -4,7 +4,8 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link @if(Request::segment(2) == 'dashboard') @else collapsed @endif" href="{{ route('dashboards.dashboard') }}">
+            <a class="nav-link @if (Request::segment(2) == 'dashboard') @else collapsed @endif"
+                href="{{ route('dashboards.dashboard') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -12,12 +13,31 @@
         <!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link @if(Request::segment(2) == 'customers') @else collapsed @endif"  href="{{ route('customers.customers') }}">
+            <a class="nav-link @if (Request::segment(2) == 'customers') @else collapsed @endif"
+                href="{{ route('customers.customers') }}">
                 <i class="bi bi-person"></i>
                 <span>Customers</span>
             </a>
         </li>
-        <!-- End Clientes Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link @if (Request::segment(2) == 'medicamentos') @else collapsed @endif"
+                href="{{ route('medicamentos.medicamentos') }}">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Medicamentos</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link @if (Request::segment(2) == 'medicos') @else collapsed @endif"
+                href="{{ route('medicos.medicos') }}">
+                <i class="bi bi-shop"></i>
+                <span>Medicos</span>
+            </a>
+        </li>
+        <!-- End Medicos Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
