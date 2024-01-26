@@ -20,7 +20,7 @@ class MedicamentosController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.medicamentos.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class MedicamentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**

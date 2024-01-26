@@ -8,7 +8,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item">Dashboard</li>
-                <li class="breadcrumb-item"><a class="active" href="{{ route('medicos.medicos') }}">Medicines list</a>
+                <li class="breadcrumb-item"><a class="active" href="{{ route('medicamentos.medicamentos') }}">Medicines list</a>
                 </li>
             </ol>
         </nav>
@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <a href="{{ route('medicos.create') }}" class="btn btn-primary"> Cadastrar Novo
+                            <a href="{{ route('medicamentos.create') }}" class="btn btn-primary"> Cadastrar Novo
                                 Medicamento</a>
                         </div>
                             <table class="table table-striped table-hover align-middle datatable">

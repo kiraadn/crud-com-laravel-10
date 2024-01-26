@@ -13,17 +13,12 @@ return new class extends Migration
     {
         Schema::create('medicamentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nomeProduto');
-            $table->string('nomeFarmaceutico');
-            $table->string('codigo')->unique();
-            $table->text('descricao')->nullable();
-            $table->double('preco');
-            $table->integer('quantidadeStock');
-            $table->unsignedBigInteger('id_fornecedor');
-            $table->foreign('id_fornecedor')->references('id')->on('fornecedores');
-            $table->date('data_entrada');
-            $table->string('lote');
+            $table->string('name');
+            $table->string('packing');
+            $table->string('generic_name')->unique();
+            $table->string('nome_fornecedor');
             $table->date('data_validade');
+            $table->text('descricao')->nullable();
             $table->timestamps();
         });
     }

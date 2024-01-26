@@ -9,20 +9,15 @@ class Medicamento extends Model
 {
     use HasFactory;
 
+    protected $table = 'medicamentos';
+
     protected $fillable = [
-        'nomeProduto',
-        'nomeFarmaceutico',
-        'codigo',
-        'descricao',
-        'preco',
-        'quantidadeStock',
-        'id_fornecedor',
-        'data_entrada',
-        'lote',
+        'name',
+        'packing',
+        'generic_name',
+        'nome_fornecedor',
         'data_validade',
+        'descricao',
     ];
 
-    public function fornecedor(){
-        return $this->belongsTo(Fornecedor::class, 'id_fornecedor');
-    }
 }

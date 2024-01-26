@@ -35,10 +35,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::put('/customers/{customer}', [CustomerController::class, 'update'])-> name('customers.update');
     Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']) -> name('customers.destroy');  //Para remover os dados
 
-    Route::resource('/medicos', MedicosController::class);
-    Route::get('/admin/medicos', [MedicosController::class, 'medicos'])->name('medicos.medicos');
-
-    Route::resource('/medicamentos', MedicamentosController::class);
+    Route::resource('/admin/medicamentos', MedicamentosController::class);
     Route::get('/admin/medicamentos', [MedicamentosController::class, 'medicamentos'])->name('medicamentos.medicamentos');
 
 
