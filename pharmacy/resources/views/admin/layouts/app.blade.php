@@ -16,7 +16,8 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i">
 
     <!-- Styles -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -30,6 +31,11 @@
     <link rel="stylesheet" href="{{ asset('vendor/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -51,18 +57,20 @@
     @include('admin.layouts._footer')
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('js/main.js') }}"></script>
+     {{-- jQuery CDN --}}
 
-    <!-- Vendor JS Files -->
+    {{--  Vendor JS Files--}}
     <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
-    <!-- Vendor JS Files -->
     <script src="{{ asset('vendor/apexcharts/apexcharts.min.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/simple-datatables/simple-datatables.js') }}"></script> --}}
     <script src="{{ asset('vendor/chart.js/chart.umd.js') }}"></script>
     <script src="{{ asset('vendor/echarts/echarts.min.js') }}"></script>
     <script src="{{ asset('vendor/quill/quill.min.js') }}"></script>
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/simple-datatables/simple-datatables.js') }}"></script>
+
+
+    <script src="{{ asset('js/main.js') }}"></script>
 
 
 </body>

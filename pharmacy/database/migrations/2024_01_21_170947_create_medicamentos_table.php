@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('packing');
             $table->string('generic_name')->unique();
             $table->string('nome_fornecedor');
+            $table->tinyInteger('isDeleted')->default(0)->comment('0:NO Delete, 1:Yes Delete');
             $table->date('data_validade');
             $table->text('descricao')->nullable();
             $table->timestamps();

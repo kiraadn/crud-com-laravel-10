@@ -3,7 +3,7 @@
 @section('title', 'Medicines - GesPharm S.')
 @section('content')
     <div class="pagetitle">
-        <h1>Cadastrar de Medicamentos</h1>
+        <h1>Editar dados de Medicamento</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
@@ -22,7 +22,7 @@
                 @include('_message')
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Ficha de Cadastro</h5>
+                        <h5 class="card-title">Editar Cadastro</h5>
 
                             @include('admin.medicamentos._form')
                     </div>

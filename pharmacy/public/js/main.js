@@ -293,26 +293,20 @@
     /**
      * Initiate Datatables
      */
-    const datatables = select('.datatable', true)
-    datatables.forEach(datatable => {
-      new simpleDatatables.DataTable(datatable, {
-        perPageSelect: [5, 10, 15, ["All", -1]],
-        columns: [{
-            select: 2,
-            sortSequence: ["desc", "asc"]
-          },
-          {
-            select: 3,
-            sortSequence: ["desc"]
-          },
-          {
-            select: 4,
-            cellClass: "green",
-            headerClass: "red"
-          }
-        ]
-      });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        $('.datatable').DataTable({
+             responsive: true,
+            paging: true,  // Ativa a paginação
+            searching: true,  // Ativa a pesquisa
+            ordering: true,  // Ativa a ordenação
+            lengthMenu: [5, 10, 25, 50, 100],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-PT.json',
+            },
+        });
     });
+
 
     /**
      * Autoresize echart charts

@@ -38,9 +38,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('/admin/medicamentos', MedicamentosController::class);
     Route::get('/admin/medicamentos', [MedicamentosController::class, 'medicamentos'])->name('medicamentos.medicamentos');
 
+    Route::get('/admin/medicamentos-stock', [MedicamentosController::class, 'stock'])->name('medicamentos.medicamentos_stock');
 
 
-});
+
+
+})->middleware('auth');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 

@@ -31,13 +31,17 @@
 
 
         <li class="nav-item">
-            <a class="nav-link @if (Request::segment(2) == 'medicos') @else collapsed @endif"
-                href="{{ route('medicos.medicos') }}">
-                <i class="bi bi-shop"></i>
-                <span>Medicos</span>
+            <a class="nav-link @if (Request::segment(2) == 'medicamentos_stock') @else collapsed @endif"
+                href="{{ route('medicamentos.medicamentos_stock') }}">
+                <i class="bi bi-archive"></i>
+                <span>Stock Medicamentos</span>
             </a>
         </li>
-        <!-- End Medicos Nav -->
+
+
+
+
+
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

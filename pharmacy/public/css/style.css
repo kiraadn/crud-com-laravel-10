@@ -1231,3 +1231,73 @@
     font-size: 13px;
     color: #012970;
   }
+
+  /* .table tbody tr {
+    align-items: center;
+    min-height: 100%;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+} */
+
+
+.table tbody tr td {
+    align-items: center;
+    min-height: 100% !important;
+   height: 100% !important;
+    max-height: 100% !important;
+
+}
+
+/* Quando a largura da tela for menor que 768 pixels */
+@media (max-width: 767.98px) {
+    div.dataTables_length label,
+    div.dataTables_filter label,
+    div.dataTables_info,
+     div.dataTables_paginate.paging_simple_numbers {
+         font-size: .7rem !important;
+     }
+
+     .dataTables_wrapper .dataTables_info
+     {
+       float: left !important;
+     }
+    div.dataTables_paginate.paging_simple_numbers {
+      float: right;
+     }
+
+     table thead{
+         font-size: .7rem;
+     }
+
+     .table td,
+     .table td a i,
+     .table td button i{
+         font-size: .7rem;
+     }
+}
+
+/* Quando a largura da tela for menor que 576 pixels */
+@media (max-width: 575.98px) {
+   div.dataTables_length label,
+   div.dataTables_filter label,
+   div.dataTables_info,
+    div.dataTables_paginate.paging_simple_numbers {
+        font-size: 11px !important;
+    }
+    table thead{
+        font-size: 11px;
+    }
+
+    .table td,
+    .table td a i,
+    .table td button i{
+        font-size: 11px;
+    }
+
+
+
+}
+
+
+
+

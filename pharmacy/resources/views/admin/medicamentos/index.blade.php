@@ -8,7 +8,8 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item">Dashboard</li>
-                <li class="breadcrumb-item"><a class="active" href="{{ route('medicamentos.medicamentos') }}">Medicines list</a>
+                <li class="breadcrumb-item"><a class="active" href="{{ route('medicamentos.medicamentos') }}">Medicines
+                        list</a>
                 </li>
             </ol>
         </nav>
@@ -26,51 +27,59 @@
                             <a href="{{ route('medicamentos.create') }}" class="btn btn-primary"> Cadastrar Novo
                                 Medicamento</a>
                         </div>
+                        <div class="table-responsive">
                             <table class="table table-striped table-hover align-middle datatable">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nome</th>
-                                        <th scope="col">Telefone</th>
-                                        <th scope="col">Endereço</th>
-                                        <th scope="col">Nome Médico</th>
-                                        <th scope="col">Endereço do Médico</th>
+                                        <th scope="col">Nome Famaceutico</th>
+                                        <th scope="col">Lote</th>
+                                        <th scope="col">Fornecedor</th>
+                                        <th scope="col">Validade</th>
+                                        <th scope="col">Descrição</th>
                                         <th scope="col">Created At</th>
+                                        <th scope="col">Update At</th>
                                         <th scope="col">Acções</th>
                                     </tr>
                                 </thead>
 
                                 <tbody class="table-group-divider" style="font-size: .95rem">
+                                    @foreach ($medicamentos as $key => $medicamento)
                                         <tr>
-                                            <td scope="row">a</td>
-                                            <td class="text-danger">a</td>
-                                            <td>aaa</td>
-                                            <td>a</td>
-                                            <td>aaa</td>
-                                            <td>aa</td>
-                                            <td>aaaaa</td>
-                                            <td class="d-flex">
+                                            <td scope="row">{{ ++$key }}</td>
+                                            <td class="text-success ">{{ $medicamento->name }}</td>
+                                            <td>{{ $medicamento->generic_name }}</td>
+                                            <td>{{ $medicamento->packing }}</td>
+                                            <td>{{ $medicamento->nome_fornecedor }}</td>
+                                            <td>{{ $medicamento->data_validade }}</td>
+                                            <td>{{ $medicamento->descricao }}</td>
+                                            <td>{{ $medicamento->created_at }}</td>
+                                            <td>{{ $medicamento->updated_at }}</td>
+                                            <td>
 
-                                                    <a href="#"
-                                                        class="btn btn-success  mx-1">
+                                                <div class="d-flex">
+                                                    <a href="{{ route('medicamentos.edit', [$medicamento->id])}}" class="btn btn-success  mx-1">
                                                         <i class="bi bi-pencil-square"></i>
                                                     </a>
-                                                    <form action="#"
-                                                        method="post">
+                                                    <form action="{{ route('medicamentos.destroy', [$medicamento->id]) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger"
-                                                            onclick="deleteConfirm(event)">
+                                                        <button type="submit" class="btn btn-danger" onclick="deleteConfirm(event)">
                                                             <i class="bi bi-trash"></i>
                                                         </button>
-
                                                     </form>
+
+                                                </div>
 
                                             </td>
                                         </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,10 +90,10 @@
     <script>
         window.deleteConfirm = function(e) {
             e.preventDefault();
-            var form = e.target.form;
+            var form = e.currentTarget.form;
             Swal.fire({
                 title: "Apagar Dados?",
-                text: "Uma vez aceite, será impossivel reverter esta acção!",
+                text: "Uma vez aceite, será impossível reverter esta ação!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -97,5 +106,6 @@
             });
         };
     </script>
+
 
 @endsection

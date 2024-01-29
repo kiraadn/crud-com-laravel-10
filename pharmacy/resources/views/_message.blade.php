@@ -1,6 +1,6 @@
 
 @if (!empty(session('success')))
-    <div class="alert alert-success" role="alert">
+    <div id="autoCloseAlert" class="alert alert-success alert-dismissible fade show" role="alert">
         {{session('success')}}
     </div>
 
@@ -26,7 +26,7 @@
 
 
 @if (!empty(session('error')))
-    <div class="alert alert-danger" role="alert">
+    <div id="autoCloseAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
         {{session('error')}}
     </div>
 
@@ -50,3 +50,13 @@
     </script>
 
 @endif
+
+
+<script>
+    // Fecha o alerta automaticamente após 5 segundos (5000 milissegundos)
+    setTimeout(function() {
+        var autoCloseAlert = document.getElementById('autoCloseAlert');
+        autoCloseAlert.classList.remove('show');
+        autoCloseAlert.classList.add('d-none');
+    }, 2000);
+</script>
