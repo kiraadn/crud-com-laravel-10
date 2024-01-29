@@ -108,6 +108,6 @@ class MedicamentosController extends Controller
     }
 
     public function store_stock(){
-        echo 'Ola'; die();
+        return view('admin.medicamentos_stock.create');
     }
 }

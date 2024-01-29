@@ -20,4 +20,9 @@ class Medicamento extends Model
         'descricao',
     ];
 
+    public function stockMedicamentos()
+    {
+        return $this->hasMany(StockMedicamento::class, 'id_medicamento');
+    }
+
 }
