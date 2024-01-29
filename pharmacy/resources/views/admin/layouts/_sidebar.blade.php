@@ -31,8 +31,8 @@
 
 
         <li class="nav-item">
-            <a class="nav-link @if (Request::segment(2) == 'medicamentos_stock') @else collapsed @endif"
-                href="{{ route('medicamentos.medicamentos_stock') }}">
+            <a class="nav-link @if (Request::segment(2) == 'stock') @else collapsed @endif"
+                href="{{ route('medicamentos.stock') }}">
                 <i class="bi bi-archive"></i>
                 <span>Stock Medicamentos</span>
             </a>

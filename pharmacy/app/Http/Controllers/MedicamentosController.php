@@ -106,4 +106,8 @@ class MedicamentosController extends Controller
     {
         return view('admin.medicamentos_stock.index');
     }
+
+    public function store_stock(){
+        echo 'Ola'; die();
+    }
 }

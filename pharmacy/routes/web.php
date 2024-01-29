@@ -38,7 +38,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('/admin/medicamentos', MedicamentosController::class);
     Route::get('/admin/medicamentos', [MedicamentosController::class, 'medicamentos'])->name('medicamentos.medicamentos');
 
-    Route::get('/admin/medicamentos-stock', [MedicamentosController::class, 'stock'])->name('medicamentos.medicamentos_stock');
+    Route::get('/admin/stock/medicamentos', [MedicamentosController::class, 'stock'])->name('medicamentos.stock');
+    Route::get('/admin/stock/store-medicamentos', [MedicamentosController::class, 'store_stock'])->name('medicamentos.store_stock');
 
 
 
