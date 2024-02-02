@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\MedicosController;
+use App\Http\Controllers\StockMedicamentoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,10 +39,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('/admin/medicamentos', MedicamentosController::class);
     Route::get('/admin/medicamentos', [MedicamentosController::class, 'medicamentos'])->name('medicamentos.medicamentos');
 
-    Route::get('/admin/stock/medicamentos', [MedicamentosController::class, 'stock'])->name('medicamentos.stock');
-    Route::get('/admin/stock/store-medicamentos', [MedicamentosController::class, 'store_stock'])->name('medicamentos.store_stock');
-
-
+    Route::resource('/admin/stock/medicamento', StockMedicamentoController::class);
+    Route::get('/admin/stock/medicamento', [StockMedicamentoController::class, 'stock'])->name('medicamentos.stock');
 
 
 })->middleware('auth');

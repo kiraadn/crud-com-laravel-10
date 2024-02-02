@@ -3,12 +3,12 @@
 @section('title', 'Medicines - GesPharm S.')
 @section('content')
     <div class="pagetitle">
-        <h1>Entrada de Medicamentos</h1>
+        <h1>Editar Entrada de Medicamentos</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboards.dashboard') }}">Home</a></li>
                 <li class="breadcrumb-item">Dashboard</li>
-                <li class="breadcrumb-item"><a class="active" href="{{ route('medicamentos.store') }}">Medicines
+                <li class="breadcrumb-item"><a class="active" href="{{ route('medicamento.store') }}">Medicines
                     stock list</a>
             </li>
             </ol>

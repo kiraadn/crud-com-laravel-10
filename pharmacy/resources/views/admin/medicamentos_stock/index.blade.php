@@ -24,8 +24,63 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <a href="{{ route('medicamentos.store_stock') }}" class="btn btn-primary"> Cadastrar Novo
-                                Medicamento</a>
+                            <a href="{{ route('medicamento.create') }}" class="btn btn-primary"> Cadastrar Novo
+                                Stock</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover align-middle datatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome Medicamento</th>
+                                        <th scope="col">batch_id</th>
+                                        <th scope="col">expiry_date</th>
+                                        <th scope="col">quantity</th>
+                                        <th scope="col">mrp</th>
+                                        <th scope="col">rate</th>
+                                        <th scope="col">Created At</th>
+                                        <th scope="col">Update At</th>
+                                        <th scope="col">Acções</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="table-group-divider" style="font-size: .95rem">
+                                    @foreach ($stocks as $key => $stock)
+                                        <tr>
+                                            <td scope="row">{{ ++$key }}</td>
+                                            <td class="text-success ">{{ $stock->medicamento->name }}</td>
+                                            <td>{{ $stock->batch_id }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($stock->expiry_date))}}</td>
+                                            <td>{{ $stock->quantity }}</td>
+                                            <td>{{ $stock->mrp }}</td>
+                                            <td>{{ $stock->rate }}</td>
+                                            <td>{{ $stock->created_at }}</td>
+                                            <td>{{ date('d-m-Y H:i:s', strtotime($stock->updated_at)) }}</td>
+
+                                            <td>
+
+                                                <div class="d-flex">
+                                                    <a href="{{ route('medicamento.edit', [$stock->id])}}" class="btn btn-success mx-1">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </a>
+                                                    <form action="{{ route('medicamento.destroy', [$stock->id]) }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger" onclick="deleteConfirm(event)">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </form>
+
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+
                         </div>
 
                     </div>

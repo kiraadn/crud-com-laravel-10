@@ -102,12 +102,4 @@ class MedicamentosController extends Controller
     }
 
 
-    public function stock()
-    {
-        return view('admin.medicamentos_stock.index');
-    }
-
-    public function store_stock(){
-        return view('admin.medicamentos_stock.create');
-    }
 }
