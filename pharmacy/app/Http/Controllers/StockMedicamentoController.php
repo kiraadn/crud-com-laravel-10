@@ -41,7 +41,7 @@ class StockMedicamentoController extends Controller
        $save->rate = $request->rate;
        $save->save();
 
-       return redirect()->back()->with('success', 'Medicamento adicionado ao stock com sucesso!');
+       return redirect()->route('medicamentos.stock')->with('success', 'Medicamento adicionado ao stock com sucesso!');
 
     }
 

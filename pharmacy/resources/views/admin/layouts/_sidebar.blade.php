@@ -16,7 +16,7 @@
             <a class="nav-link @if (Request::segment(2) == 'customers') @else collapsed @endif"
                 href="{{ route('customers.customers') }}">
                 <i class="bi bi-person"></i>
-                <span>Customers</span>
+                <span>Clientes</span>
             </a>
         </li>
 
@@ -35,6 +35,15 @@
                 href="{{ route('medicamentos.stock') }}">
                 <i class="bi bi-archive"></i>
                 <span>Stock Medicamentos</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link @if (Request::segment(2) == 'fornecedores') @else collapsed @endif"
+                href="{{ route('fornecedores.fornecedor') }}">
+                <i class="bi bi-people"></i>
+                <span>Fornecedores</span>
             </a>
         </li>
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\MedicosController;
 use App\Http\Controllers\StockMedicamentoController;
@@ -41,6 +42,10 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::resource('/admin/stock/medicamento', StockMedicamentoController::class);
     Route::get('/admin/stock/medicamento', [StockMedicamentoController::class, 'stock'])->name('medicamentos.stock');
+
+    Route::resource('/admin/fornecedores', FornecedorController::class);
+    Route::get('/admin/fornecedores', [FornecedorController::class, 'fornecedores'])->name('fornecedores.fornecedor');
+
 
 
 })->middleware('auth');

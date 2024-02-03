@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Medicines - GesPharm S.')
+@section('title', 'Stock Medicines - GesPharm S.')
 @section('content')
     <div class="pagetitle">
         <h1>Stock de Medicamentos</h1>
@@ -55,7 +55,7 @@
                                             <td>{{ $stock->quantity }}</td>
                                             <td>{{ $stock->mrp }}</td>
                                             <td>{{ $stock->rate }}</td>
-                                            <td>{{ $stock->created_at }}</td>
+                                            <td>{{ date('d-m-Y H:i:s', strtotime($stock->created_at)) }}</td>
                                             <td>{{ date('d-m-Y H:i:s', strtotime($stock->updated_at)) }}</td>
 
                                             <td>

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Medicines - GesPharm S.')
+@section('title', 'Stock Medicines - GesPharm S.')
 @section('content')
     <div class="pagetitle">
         <h1>Editar Entrada de Medicamentos</h1>

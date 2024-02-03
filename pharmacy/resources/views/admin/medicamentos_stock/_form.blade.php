@@ -13,26 +13,28 @@
         <span style="color: red">*</span>
     </label>
     <div class="col-sm-9">
-            <select name="id_medicamento" id="id_medicamento" class="form-control">
-                <option disabled >Selecione o Nome do Medicamento</option>
-                @foreach ($medicamentos as $medicamento )
-                    <option {{ ($medicamento->id == $stock->id_medicamento) ? 'selected' : ''}}  value="{{$medicamento->id}}">{{$medicamento->name}}</option>
-                    @endforeach
-            </select>
+        <select name="id_medicamento" id="id_medicamento" class="form-control">
+            <option disabled>Selecione o Nome do Medicamento</option>
+            @foreach ($medicamentos as $medicamento)
+                <option value="{{ $medicamento->id }}">{{ $medicamento->name }}</option>
+                @if (!empty($stock->batch_id))
+                    <option {{ $medicamento->id == $stock->id_medicamento ? 'selected' : '' }}
+                        value="{{ $medicamento->id }}">{{ $medicamento->name }}</option>
+                @endif
+            @endforeach
+        </select>
     </div>
 </div>
 
-@if(!empty($stock->batch_id))
-
-<div class="row mb-3">
-    <label for="batch_id" class="col-sm-3 col-form-label">batch_id
-    </label>
-    <div class="col-sm-9">
-        <input type="text" name="batch_id"
-            value="{{ old('batch_id', !empty($stock) ? $stock->batch_id : '') }}"
-            class="form-control" id="batch_id" required disabled>
+@if (!empty($stock->batch_id))
+    <div class="row mb-3">
+        <label for="batch_id" class="col-sm-3 col-form-label">batch_id
+        </label>
+        <div class="col-sm-9">
+            <input type="text" name="batch_id" value="{{ old('batch_id', !empty($stock) ? $stock->batch_id : '') }}"
+                class="form-control" id="batch_id" required disabled>
+        </div>
     </div>
-</div>
 @endif
 
 <div class="row mb-3">
@@ -51,8 +53,7 @@
         <span style="color: red">*</span>
     </label>
     <div class="col-sm-9">
-        <input type="text" name="quantity"
-            value="{{ old('quantity', !empty($stock) ? $stock->quantity : '') }}"
+        <input type="text" name="quantity" value="{{ old('quantity', !empty($stock) ? $stock->quantity : '') }}"
             class="form-control" id="quantity" required>
     </div>
 </div>
@@ -61,8 +62,7 @@
     <label for="mrp" class="col-sm-3 col-form-label">MRP
     </label>
     <div class="col-sm-9">
-        <input type="text" name="mrp"
-            value="{{ old('mrp', !empty($stock) ? $stock->mrp : '') }}"
+        <input type="text" name="mrp" value="{{ old('mrp', !empty($stock) ? $stock->mrp : '') }}"
             class="form-control" id="mrp" required>
     </div>
 </div>
@@ -71,8 +71,7 @@
     <label for="rate" class="col-sm-3 col-form-label">Rate
     </label>
     <div class="col-sm-9">
-        <input type="text" name="rate"
-            value="{{ old('rate', !empty($stock) ? $stock->rate : '') }}"
+        <input type="text" name="rate" value="{{ old('rate', !empty($stock) ? $stock->rate : '') }}"
             class="form-control" id="rate" required>
     </div>
 </div>
